@@ -53,5 +53,11 @@ public class Cadastro {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+	@Override
+	public String toString() {
+		return "Cadastro [id=" + id + ", nome=" + nome + ", matricula=" + matricula + ", cpf=" + cpf + ", dataNasc="
+				+ dataNasc + ", endereco=" + endereco + "]";
+	}
+	
 	
 }

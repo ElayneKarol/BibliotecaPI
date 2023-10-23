@@ -16,6 +16,7 @@ public class Bibli {
 	private String editora;
 	private String dataPubli;
 	private String edicao;
+
 	
 	public Long getId() {
 		return id;
@@ -25,9 +26,9 @@ public class Bibli {
 		this.id = id;
 	}
 
-
 	public String getTitulo() {
 		return titulo;
+	
 	}
 
 	public void setTitulo(String titulo) {
@@ -65,5 +66,10 @@ public class Bibli {
 	public void setEdicao(String edicao) {
 		this.edicao = edicao;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "Bibli [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", editora=" + editora + ", dataPubli="
+				+ dataPubli + ", edicao=" + edicao + "]";
+	}
 }

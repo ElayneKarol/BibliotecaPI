@@ -6,7 +6,7 @@ public class Bibli {
 	private String autor;
 	private String editora;
 	private String dataPubli;
-	private String dataEdi;
+	private String edicao;
 
 	public String getTitulo() {
 		return titulo;
@@ -40,12 +40,12 @@ public class Bibli {
 		this.dataPubli = dataPubli;
 	}
 
-	public String getDataEdi() {
-		return dataEdi;
+	public String getedicao() {
+		return edicao;
 	}
 
-	public void setDataEdi(String dataEdi) {
-		this.dataEdi = dataEdi;
+	public void setDataEdi(String edicao) {
+		this.edicao = edicao;
 	}
 
 }

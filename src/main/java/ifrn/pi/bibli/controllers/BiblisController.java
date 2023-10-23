@@ -10,5 +10,8 @@ public class BiblisController {
 	public String form() {
 		return "formBibli";
 	}
-
+	@RequestMapping("/bibli/cadastro")
+	public String cadastro() {
+		return "cadastroAluno";
+	}
 }

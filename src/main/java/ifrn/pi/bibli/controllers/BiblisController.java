@@ -20,26 +20,26 @@ public class BiblisController {
 
 	@RequestMapping("/bibli/form")
 	public String form() {
-		return "formBibli";
+		return "Bibli/formBibli";
 	}
 
 	@RequestMapping("/bibli/cadastro")
 	public String cadastro() {
-		return "cadastroAluno";
+		return "Bibli/cadastroAluno";
 	}
 	
 	@PostMapping("/bibli")
 	public String adicionar(Bibli bibli) {			
 		System.out.println(bibli);
 		br.save(bibli);
-		return "evento-adicionado";
+		return "Bibli/livro-adicionado";
 	}
 	
 	@PostMapping("/cadastro")
 	public String cadastrar(Cadastro cadastro) {			
 		System.out.println(cadastro);
 		cr.save(cadastro);
-		return "cadastro-adicionado";
+		return "Bibli/cadastro-adicionado";
 	}
 
 }

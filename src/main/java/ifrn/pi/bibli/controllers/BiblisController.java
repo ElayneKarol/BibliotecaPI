@@ -36,7 +36,7 @@ public class BiblisController {
 	}
 
 	@GetMapping
-	public ModelAndView listar() {
+	public ModelAndView listarLiv() {
 		List<Bibli> biblis = br.findAll(); 
 		ModelAndView mv = new ModelAndView("bibli/listaLivro");
 		mv.addObject("biblis", biblis);

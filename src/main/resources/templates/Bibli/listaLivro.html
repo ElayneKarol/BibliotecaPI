@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Biblioteca</title>
+</head>
+<body>
+	<div th:replace="~{menu :: menu}"></div>
+	
+	<div class="container">
+	
+	<h1>Lista de Livros</h1>
+
+	<table>
+		
+		<thead>
+			<tr>
+				<th>ID:</th>
+				<th>TÍTULO:</th>
+				<th>AUTOR:</th>
+				<th>EDITORA:</th>
+				<th>DATA DE PUBLICAÇÃO:</th>
+				<th>EDIÇÃO:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="e : ${biblis}">
+				<td th:text="${e.id}">1</td>
+				<td th:text="${e.titulo}">Nome do Livro</td>
+				<td th:text="${e.autor}">Escritor</td>
+				<td th:text="${e.editora}">Empresa</td>
+				<td th:text="${e.dataPubli}">00/00/0000</td>
+				<td th:text="${e.edicao}">Editor</td>
+			</tr>
+		</tbody>
+		
+	</table>
+</body>
+</html>

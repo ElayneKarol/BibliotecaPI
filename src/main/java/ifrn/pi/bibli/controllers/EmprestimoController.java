@@ -19,10 +19,11 @@ public class EmprestimoController {
 		return "bibli/empresLivro";
 	}
 	
-	@PostMapping("/emprest")
+	@PostMapping("/empres")
 	public String fazerEmpre(Emprestimo emprestimo) {
 		System.out.println(emprestimo);
 		er.save(emprestimo);
 		return "emprestimo-adicionado";
 	}
+	
 }

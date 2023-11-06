@@ -28,7 +28,7 @@
 		<tbody>
 			<tr th:each="e : ${biblis}">
 				<td th:text="${e.id}">1</td>
-				<td th:text="${e.titulo}">Nome do Livro</td>
+				<td><a th:href="@{/bibli/{id}(id=${e.id})}"><span th:text="${e.titulo}">Nome do Livro</span></a></td>
 				<td th:text="${e.autor}">Escritor</td>
 				<td th:text="${e.editora}">Empresa</td>
 				<td th:text="${e.dataPubli}">00/00/0000</td>
@@ -37,5 +37,11 @@
 		</tbody>
 		
 	</table>
+	<p></p>
+	<p></p>
+		<div class="right">
+			<a class="waves-effect waves-light btn dark green" th:href="@{/bibli/empres}">Pegar Livro</a>
+		</div>
+
 </body>
 </html>

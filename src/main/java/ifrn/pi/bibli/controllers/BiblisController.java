@@ -1,10 +1,12 @@
 package ifrn.pi.bibli.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,10 +34,25 @@ public class BiblisController {
 	}
 
 	@GetMapping
-	public ModelAndView listarLiv() {
+	public ModelAndView listar() {
 		List<Bibli> biblis = br.findAll(); 
 		ModelAndView mv = new ModelAndView("bibli/listaLivro");
 		mv.addObject("biblis", biblis);
 		return mv;
+	}
+	
+	@GetMapping("/{id}")
+	public ModelAndView detalhar(@PathVariable Long id) {
+		ModelAndView md = new ModelAndView();
+		Optional<Bibli> opt = br.findById(id);
+		if(opt.isEmpty()) {
+			md.setViewName("redirect:/bibli");
+			return md;
+		}
+		
+		md.setViewName("bibli/detalhesLiv");
+		Bibli bibli = opt.get();
+		md.addObject("Bibli", bibli);
+		return md;
 	}
 	}
